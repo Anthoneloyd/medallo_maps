@@ -30,6 +30,12 @@ class MapPage extends StatelessWidget {
                 'https://{s}.tile.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
             userAgentPackageName: 'com.example.app',
           ),
+
+          RichAttributionWidget(
+            attributions: [
+              TextSourceAttribution('© OpenStreetMap contributors | CyclOSM'),
+            ],
+          ),
         ],
       ),
     );
