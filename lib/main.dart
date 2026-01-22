@@ -19,22 +19,20 @@ class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Tile Google Map API Example")),
+      appBar: AppBar(title: Text("Tile API Example")),
       body: FlutterMap(
         // options: MapOptions(
         //   initialCenter:
         // ),
         children: [
           TileLayer(
-            urlTemplate:
-                'https://{s}.tile.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
+            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
             userAgentPackageName: 'com.example.app',
           ),
 
           RichAttributionWidget(
             attributions: [
-              TextSourceAttribution('© OpenStreetMap contributors | CyclOSM'),
-            ],
+              TextSourceAttribution('© OpenStreetMap contributors',
           ),
         ],
       ),
