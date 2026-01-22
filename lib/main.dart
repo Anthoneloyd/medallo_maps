@@ -37,9 +37,7 @@ class MapPage extends StatelessWidget {
           ),
 
           RichAttributionWidget(
-            attributions: [
-              TextSourceAttribution('© OpenStreetMap contributors'),
-            ],
+            attributions: [TextSourceAttribution('OpenStreetMap contributors')],
           ),
         ],
       ),
