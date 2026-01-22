@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,21 +20,25 @@ class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Tile Google Map API Example")),
+      appBar: AppBar(title: Text("Tile API Example")),
       body: FlutterMap(
-        // options: MapOptions(
-        //   initialCenter:
-        // ),
+        options: const MapOptions(
+          initialCenter: LatLng(6.2442, -75.5812), // Medellín de ejemplo
+          initialZoom: 13,
+          maxZoom: 19,
+        ),
         children: [
           TileLayer(
-            urlTemplate:
-                'https://{s}.tile.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
-            userAgentPackageName: 'com.example.app',
+            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            userAgentPackageName: 'com.tuempesa.miapp',
+            additionalOptions: const {
+              'User-Agent': 'MiAppMapa/1.0 (agarcesb@unal.edu.co)',
+            },
           ),
 
           RichAttributionWidget(
             attributions: [
-              TextSourceAttribution('© OpenStreetMap contributors | CyclOSM'),
+              TextSourceAttribution('© OpenStreetMap contributors'),
             ],
           ),
         ],
