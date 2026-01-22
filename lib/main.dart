@@ -20,7 +20,7 @@ class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Tile API Example")),
+      appBar: AppBar(title: Text("Ejemplo del openestremaps")),
       body: FlutterMap(
         options: const MapOptions(
           initialCenter: LatLng(6.2442, -75.5812), // Medellín de ejemplo
@@ -37,9 +37,7 @@ class MapPage extends StatelessWidget {
           ),
 
           RichAttributionWidget(
-            attributions: [
-              TextSourceAttribution('© OpenStreetMap contributors'),
-            ],
+            attributions: [TextSourceAttribution('OpenStreetMap contributors')],
           ),
         ],
       ),
